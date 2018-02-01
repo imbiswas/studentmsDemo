@@ -25,7 +25,7 @@ from django.utils.translation import ugettext_lazy as _
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',mv.home,name='home'),
-    # url(r'^new/register/$',views.register,name='register'),
+    url(r'^register/$',mv.register,name='register'),
     # url(r'^batch/list/$',views.get_batch_list,name='batch_list'),
     # url(r'^student/list/bybatch/$',views.get_student_list_by_batch,name='student_list')
     url(r'^student/list/$',mv.student_list,name='student_list'),

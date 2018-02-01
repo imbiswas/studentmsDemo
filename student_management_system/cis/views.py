@@ -47,9 +47,7 @@ def student_marks(request):
 		temp_dict = {}
 		temp_dict['name'] = q.name
 		temp_dict['Exam']= q.exam
-
-
-        student_list.append(temp_dict)
+		student_list.append(temp_dict)
 
 	context_dict = {'query':student_list}
 	return render(request,'marks.html',context_dict)

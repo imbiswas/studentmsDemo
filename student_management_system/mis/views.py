@@ -35,16 +35,18 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url='/admin/')
 def home(request):
 	return render(request,'home.html')
-# def register(request):
-# 	if request.method=='POST':
-# 		form = StudentForm(request.POST)
-# 		if form.is_valid():
-# 			form.save()
-# 			return HttpResponseRedirect('/')
-# 	else:
-# 		form = StudentForm()
-# 	context_dict = {'form':form}
-# 	return render(request,'register.html',context_dict)
+
+def register(request):
+	if request.method=='POST':
+		form = StudentForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/')
+	else:
+		form = StudentForm()
+	context_dict = {'form':form}
+	return render(request,'register.html',context_dict)
+	
 def student_list(request):
 	query = Student.objects.all()
 	student_list = []

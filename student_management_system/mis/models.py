@@ -12,6 +12,9 @@ class Address(models.Model):
 	municipal_vdc = models.CharField(max_length=20)
 	area = models.CharField(max_length=20)
 
+	def __str__(self):
+		return '%s'%(self.district)
+
 class Course(models.Model):
 	course_name = models.CharField(max_length=20)
 	duration = models.CharField(max_length=20,help_text='specify duration in weeks')
