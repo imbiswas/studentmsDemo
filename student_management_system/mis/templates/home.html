@@ -1,0 +1,112 @@
+
+{% load staticfiles %}
+
+<html>
+<head>
+	<title>Infography Technologies</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+	.navbar-default {
+    	min-height: 80px;
+    				}
+    .navbar-inverse{
+    	min-height: 90px;
+    }
+	</style>
+</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+					<div class='row'>
+						<div class='col-md-1'></div>
+						<div class='col-md-4'>
+							<a class="navbar-brand" href="/">
+								<img alt="info_mis" src="/media/stamp.png" height='60' width='60'>
+							</a>
+						</div>
+						<div class='col-md-7'>
+							<p class="text-success" style='padding-top:40px;font-weight:bold;font-size:20px;'>Infography Technologies </p>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='col-md-4'>
+							<ol class="breadcrumb">
+								<li class="active"><a href="/">Home</a></li>
+								<li><a href="/admin">Admin</a></li>
+								<li><a href="/student/list/">Student List</a></li>
+								<li><a href="/make/payment/">Make Payment</a></li>
+
+								<li><a href="/marks/">Marks</a></li>
+								<li><a href="/marksadd/">Add Marks</a></li>
+								<li><a href="/attadd/">Add Attendance</a></li>
+
+							</ol>
+						</div>
+						<div class='col-md-4'></div>
+						<div class='col-md-4 pull right'>
+							<div class="pull-right">
+								<a href="{% url 'logingout'  %}">Logout</a>
+							</div>
+							
+						</div>
+					</div>
+			</div>
+		</nav>
+		{%block home %}
+		<div class='container'>
+			<div class='row'>
+				<div class='col-md-6'>
+					<div class="jumbotron">
+						<span class="glyphicon glyphicon-th-list" style='font-size:30px;'></span><br><br>
+						<div class="list-group">
+							<li><a href="/admin/">Admin</a></li>
+							<li><a href="/student/list/">Student List</a></li>
+							<li><a href="/make/payment/">Make Payment</a></li>
+
+							<li><a href="/marks/">Marks</a></li>
+							<li><a href="/marksadd/">Add Marks</a></li>
+							<li><a href="/attadd/">Add Attendance</a></li>
+							<li><a href="/attendance/">View Attendance</a></li>
+						</div>
+					</div>
+				</div>
+				<div class='col-md-6'></div>
+			</div>
+		</div>
+		{%endblock%}
+		
+		{%block content %}
+		{% endblock %}
+		
+
+		<nav class="navbar navbar-inverse navbar-fixed-bottom">
+			<div class="container">
+				<div class='row'>
+					<div class='col-md-4'></div>
+					<div class='col-md-7 center'>
+							<p style="color: #50FFFF; font-size: 16px;">
+								Developed By: Infography Technologies Pvt. Ltd.
+							</p>
+					</div>
+					<div class='col-md-1'></div>
+				</div>
+
+				<div class='row'>
+					<div class='col-md-4'></div>
+					<div class='col-md-7'>
+						<p style="color: #50FFFF; font-size: 16px;">
+								<span class="glyphicon glyphicon-copyright-mark" ></span> 2018 Infography Technologies. All rights reserved.
+							</p>
+					</div>
+					<div class='col-md-1'></div>
+				</div>
+
+			</div>
+		</nav>
+
+	</body>
+</html>

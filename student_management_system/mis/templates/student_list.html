@@ -1,0 +1,79 @@
+
+{% extends 'home.html' %}
+{%block home%}
+{%endblock%}
+{% block content %}
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-2'></div>
+		<div class='col-md-10 pull-left'>
+			<p class="bg-info" style='font-size:20px;font-weight:bold;'>
+
+				<span class="glyphicon glyphicon-th-list"></span>
+				&nbsp;&nbsp;
+				Student Enrolled
+			</p>
+		</div>
+	</div>
+
+		<div class='row'>
+		<div class='col-md-2'></div>
+		<div class='col-md-10 pull-left'>
+		<table class="table table-condensed">
+			<thead>
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Number of course</th>
+			<th>Course enrolled</th>
+		</tr>
+			</thead>
+			<tbody>
+			{% for q in query %}
+		<tr>
+			<td>{{q.name}}</td>
+			<td>{{q.email}}</td>
+			<td>{{q.number_of_course}}</td>
+			<td>{{q.course_taken}}</td>
+			<td><a href='/account/detail/{{q.s_id}}'>Account Details</a></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+
+	</table>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+<!-- <html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h3> List of Student enrolled </h3>
+	<table border=''>
+		<tr>
+			<th>Name</th>
+			<th>Number of course</th>
+			<th>Course enrolled</th>
+		</tr>
+			{% for q in query %}
+		<tr>
+			<td>{{q.name}}</td>
+			<td>{{q.number_of_course}}</td>
+			<td>{{q.course_taken}}</td>
+			<td><a href='/account/detail/{{q.s_id}}'>Account Details</a></td>
+		</tr>
+		{% endfor %}
+
+	</table>
+
+</body>
+</html> -->

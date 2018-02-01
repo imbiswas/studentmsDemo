@@ -1,0 +1,84 @@
+<html>
+<head>
+<style>
+@page {
+size: a4 portrait;
+@frame header_frame { /* Static Frame */
+-pdf-frame-content: header_content;
+left: 50pt; width: 512pt; top: 20pt; height: 80pt;
+}
+@frame content_frame { /* Content Frame */
+left: 50pt; width: 512pt; top: 100pt; height: 632pt;
+background-color:#A5F2F3;
+}
+@frame footer_frame { /* Another static Frame */
+-pdf-frame-content: footer_content;
+left: 50pt; width: 512pt; top: 772pt; height: 40pt;
+}
+}
+img { zoom: 80%; }
+</style>
+</head>
+<body>
+<!-- Content for Static Frame 'header_frame' -->
+<div id="header_content">
+	<center>
+		<table align='center'>
+		<tr>
+			<td width='5%'><img src='media/stamp.png' height='80' width='80'></img></td>
+		</tr>
+		<tr>
+			<td width='80%'><p style='font-weight:bold;font-size:20px;'>Infography Technologies</p></td>
+		</tr>
+	</table>
+	</center>
+	
+	
+	<hr>
+</div>
+<!-- Content for Static Frame 'footer_frame' -->
+<div id="footer_content">(c) - page <pdf:pagenumber>
+of <pdf:pagecount>
+<center> <p style='color:red;'>For any queries: info@infographytechnologies.com</p> </center>
+</div>
+<!-- HTML Content -->
+<center><p style='font-weight:bold;font-size:20px;color:blue'>INVOICE</center>
+<h5>Account summary of: {{student.title}} {{s_name}} </h5>
+<br>
+<br>
+<center>
+		<table border='1'>
+		<tr>
+			<th>Total Fee</th>
+			<th>Date of Payment</th>
+			<th>Payment Amount </th>
+			<th>Due Amount </th>
+		</tr>
+		{% for q in s_query %}
+		<tr>
+			{% if forloop.first %}
+			<td>{{total_fee}}</td>
+			{%else%}
+			<td></td>
+			{% endif %}
+			<td>{{q.date_of_payment}}</td>
+			<td>{{q.payment_amount}}</td>
+			{% if forloop.first %}
+			<td><span style='color:red'>{{due_amount}}</span></td>
+			{%else%}
+			<td></td>
+			{% endif %}
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style='text-align:right;'>( Prakash Chandra Prasad )</p>
+<p style='text-align:right;'>( Founder, CEO )</p>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<html>
+<head>
+<style>
+@page {
+size: a4 portrait;
+@frame header_frame { /* Static Frame */
+-pdf-frame-content: header_content;
+left: 50pt; width: 512pt; top: 20pt; height: 80pt;
+}
+@frame content_frame { /* Content Frame */
+left: 50pt; width: 512pt; top: 100pt; height: 632pt;
+background-color:#A5F2F3;
+}
+@frame footer_frame { /* Another static Frame */
+-pdf-frame-content: footer_content;
+left: 50pt; width: 512pt; top: 772pt; height: 40pt;
+}
+}
+img { zoom: 80%; }
+</style>
+</head>
+<body>
+<!-- Content for Static Frame 'header_frame' -->
+<div id="header_content">
+	<center>
+		<table align='center'>
+		<tr>
+			<td width='5%'><img src='media/stamp.png' height='80' width='80'></img></td>
+		</tr>
+		<tr>
+			<td width='80%'><p style='font-weight:bold;font-size:20px;'>Infography Technologies</p></td>
+		</tr>
+	</table>
+	</center>
+	
+	
+	<hr>
+</div>
+<!-- Content for Static Frame 'footer_frame' -->
+<div id="footer_content">(c) - page <pdf:pagenumber>
+of <pdf:pagecount>
+<center> <p style='color:red;font-size:10px;'>For any queries: info@infographytechnologies.com</p> </center>
+</div>
+<!-- HTML Content -->
+<center><p style='font-weight:bold;font-size:20px;color:blue'>RECEIPT</center>
+<table>
+	<tr>
+		<td width='10%' style='font-size:15px;'>Name:</td>
+		<td width='90%'><p style='font-weight:bold;font-size:15px'>{{full_name}}</p></td>
+	</tr>
+	<tr>
+		<td width='10%' style='font-size:15px;'>Courses:</td>
+		<td width='90%'><p style='font-weight:bold;font-size:15px'>{{course_name}}</p></td>
+	</tr>
+		<tr>
+		<td width='10%' style='font-size:15px;'>Date:</td>
+		<td width='90%'><p style='font-weight:bold;font-size:15px'>{{time}}</p></td>
+	</tr>
+</table>
+<br>
+<br>
+<center>
+	<table border='1'>
+		<tr>
+			<th width='35%' height='100' style='font-size:20px;'>Course Offered</th>
+			<th width='20%' height='100' style='font-size:20px;'>Total Fee(NPR)</th>
+			<th width='20%' height='100' style='font-size:20px;'>Total Paid(NPR)</th>
+			<th width='20%' height='100' style='font-size:20px;'>Due Amount(NPR)</th>
+		</tr>
+		<tr>
+			<td style='font-size:20px;' align='center' heigth='150'>{{course_name}}</td>
+			<td style='font-size:20px;'align='center' heigth='150'>{{total_fee}}</td>
+			<td style='font-size:20px;'align='center' heigth='150'>{{total_paid}}</td>
+			<td style='font-size:20px;'align='center' heigth='150'>{{due_amount}}</td>
+		</tr>
+
+	</table>
+</center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style='text-align:right;font-weight:bold;'>-------------------------------------------------</p>
+<p style='text-align:right;font-weight:bold;font-size:10px;'>( Infography Technologies Pvt. Ltd. )</p>
+</body>
+</html>
